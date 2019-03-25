@@ -1,12 +1,14 @@
 #!/bin/bash
 
+# change info@example.com to the email address you want to receive failure notifications at
+
 # update packages
 rm -f update-packages.err
 sudo apt-get -y update 2>update-packages.err
 if [ -s update-packages.err ]; then
         # failed, have we already tried rebooting the server and re-configuring packages?
         if [ -f update-packages.err.update.2 ]; then
-                echo "Rebooted server; tried running dpkg --configure -a" | mail -s "upgrade-packages.sh failed (update)" "info@simplesyndicate.com"
+                echo "Rebooted server; tried running dpkg --configure -a" | mail -s "upgrade-packages.sh failed (update)" "info@example.com"
                 exit 1
         fi
         # already tried rebooting the server?
@@ -31,7 +33,7 @@ sudo apt-get --with-new-pkgs -y upgrade 2>update-packages.err
 if [ -s update-packages.err ]; then
         # failed, have we already tried rebooting the server and re-configuring packages?
         if [ -f update-packages.err.upgrade.2 ]; then
-                echo "Rebooted server; tried running dpkg --configure -a" | mail -s "upgrade-packages.sh failed (upgrade)" "info@simplesyndicate.com"
+                echo "Rebooted server; tried running dpkg --configure -a" | mail -s "upgrade-packages.sh failed (upgrade)" "info@example.com"
                 exit 1
         fi
         # already tried rebooting the server?
@@ -56,7 +58,7 @@ sudo apt-get -y autoremove 2>update-packages.err
 if [ -s update-packages.err ]; then
         # failed, have we already tried rebooting the server and re-configuring packages?
         if [ -f update-packages.err.autoremove.2 ]; then
-                echo "Rebooted server; tried running dpkg --configure -a" | mail -s "upgrade-packages.sh failed (auto-remove)" "info@simplesyndicate.com"
+                echo "Rebooted server; tried running dpkg --configure -a" | mail -s "upgrade-packages.sh failed (auto-remove)" "info@example.com"
                 exit 1
         fi
         # already tried rebooting the server?
