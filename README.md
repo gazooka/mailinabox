@@ -6,6 +6,7 @@ Scripts, etc. for running your own mailinabox.
 
 * cron - daily cron script that frees memory and updates packages; schedule via `crontab -e` using `0 2 * * * /home/<user>/cron.sh`
 * free-memory - frees memory
+* log-cleanup - cleans up log files; schedule via `crontab -e` using `0 4 * * 0 /home/<user>/log-cleanup.sh`
 * reboot - reboots the machine
 * update-mail-in-a-box - updates mailinabox
 * update-packages - updates packages
