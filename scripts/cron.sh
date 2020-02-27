@@ -1,15 +1,17 @@
 #!/bin/bash
 
-./free-memory.sh
+./mail-in-a-box-backup.sh
 
-./update-packages.sh
-./free-memory.sh
-./reboot-if-required.sh
+./system-memory-free.sh
 
-./upgrade-packages.sh
-./free-memory.sh
-./reboot-if-required.sh
+./packages-update.sh
+./system-memory-free.sh
+./system-reboot-if-required.sh
 
-./auto-remove-packages.sh
-./free-memory.sh
-./reboot-if-required.sh
+./packages-upgrade.sh
+./system-memory-free.sh
+./system-reboot-if-required.sh
+
+./packages-auto-remove.sh
+./system-memory-free.sh
+./system-reboot-if-required.sh
