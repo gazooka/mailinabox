@@ -2,5 +2,5 @@
 
 # reboot if one is required
 if [ -f /var/run/reboot-required ]; then
-        ./reboot.sh
+        ./system-reboot.sh
 fi
