@@ -28,4 +28,3 @@ else
         rm -f packages-auto-remove.err.1
         rm -f packages-auto-remove.err.2
 fi
-
