@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# validate this script
+state=$(set +o)
+set -euo pipefail
+shellcheck "$0"
+eval "$state"
+
 # get agent installer
 rm -f azcopy.tar.gz
 rm -f azcopy

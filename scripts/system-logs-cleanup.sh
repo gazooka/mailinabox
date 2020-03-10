@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# validate this script
+state=$(set +o)
+set -euo pipefail
+shellcheck "$0"
+eval "$state"
+
 # general logs
 sudo rm -f /var/log/*.log.[23456789].*
 sudo rm -f /var/log/*.log.1[0123456789].*

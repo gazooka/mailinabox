@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# validate this script
+state=$(set +o)
+set -euo pipefail
+shellcheck "$0"
+eval "$state"
+
 # change info@example.com to the email address you want to receive failure notifications at
 
 # update packages

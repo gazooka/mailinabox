@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# validate this script
+state=$(set +o)
+set -euo pipefail
+shellcheck "$0"
+eval "$state"
+
 # if mail-in-a-box has already been installed, perform a backup first in case one hasn't been done
 if sudo test -e "./mailinabox/management/backup.py"; then
 	./mail-in-a-box-backup.sh
