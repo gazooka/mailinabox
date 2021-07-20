@@ -15,3 +15,4 @@ tar -zxvf azcopy.tar.gz --strip=1
 # cleanup
 rm -f ThirdPartyNotice.txt
 rm -f azcopy.tar.gz
+rm -f NOTICE.txt
